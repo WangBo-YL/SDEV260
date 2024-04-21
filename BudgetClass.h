@@ -6,10 +6,11 @@
 #include <vector>
 #include "lib/sqlite3/sqlite3.h"
 
+
 class Budget {
 private:
 	std::string name = "Default";
-
+	sqlite3* db;
 public:
 	//Structs
 	struct category {
@@ -57,3 +58,4 @@ public:
 	void deleteCategory(std::string name) throw(std::invalid_argument);
 
 };//End of class
+

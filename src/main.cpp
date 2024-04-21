@@ -9,10 +9,5 @@ int main(int argc, char *argv[])
     BudgetManagementSystem w;
     w.show();
     return a.exec();
-    
-
-
-    
-    
-
+   
 }

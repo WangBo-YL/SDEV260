@@ -4,7 +4,7 @@
 #include <string>
 #include <exception>
 #include <vector>
-#include "headers\sqlite3.h"
+#include "lib/sqlite3/sqlite3.h"
 
 class Budget {
 private:

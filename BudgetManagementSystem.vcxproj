@@ -22,6 +22,7 @@
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
     <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.22621.0</WindowsTargetPlatformVersion>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -38,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.8.0_mingw_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
+    <QtPlugin>true</QtPlugin>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.8.0_mingw_64</QtInstall>
@@ -68,7 +69,8 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Bo\source\repos\BudgetManagement\headers;%(AdditionalIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Bo\source\repos\SDEV260\headers;C:\Users\Bo\source\repos\SDEV260\lib\sqlite3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -108,23 +110,13 @@
     <ClCompile Include="BudgetClass.h" />
     <ClCompile Include="DataBaseCreation.sql" />
     <ClCompile Include="InsertCategoryTest.sql" />
-    <ClCompile Include="src\BudgetItem.cpp" />
     <ClCompile Include="src\BudgetManagementSystem.cpp" />
-    <ClCompile Include="src\Category.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="headers\BudgetManagementSystem.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="headers\Budget.h" />
-    <ClInclude Include="headers\BudgetItem.h" />
-    <ClInclude Include="headers\BudgetManagerAPI.h" />
-    <ClInclude Include="headers\Category.h" />
-    <ClInclude Include="headers\CategoryManager.h" />
-    <ClInclude Include="headers\CategoryManagerAPI.h" />
-    <ClInclude Include="headers\Savings.h" />
-    <ClInclude Include="headers\sqlite3.h" />
     <ClInclude Include="SavingsClass.h" />
   </ItemGroup>
   <ItemGroup>

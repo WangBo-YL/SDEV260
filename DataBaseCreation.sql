@@ -1,4 +1,4 @@
---Database creation code.
+--Test data for budget table creation.
 
 CREATE TABLE IF NOT EXISTS budget(
 	budget_id integer PRIMARY KEY,

@@ -41,6 +41,7 @@
     <QtInstall>6.8.0_mingw_64</QtInstall>
     <QtBuildConfig>debug</QtBuildConfig>
     <QtPlugin>true</QtPlugin>
+    <QtModules>core;gui;widgets;sql</QtModules>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
     <QtInstall>6.8.0_mingw_64</QtInstall>
@@ -107,9 +108,15 @@
     <QtUic Include="BudgetManagementSystem.ui" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BudgetClass.cpp" />
     <ClCompile Include="BudgetClass.h" />
-    <ClCompile Include="DataBaseCreation.sql" />
-    <ClCompile Include="InsertCategoryTest.sql" />
+    <None Include="DataBaseCreation.sql">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <FileType>Document</FileType>
+    </None>
+    <ClCompile Include="InsertCategoryTest.sql">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="src\BudgetManagementSystem.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
@@ -120,10 +127,18 @@
     <ClInclude Include="SavingsClass.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="InsertBudgetTest.sql" />
-    <None Include="InsertItemTest.sql" />
-    <None Include="InsertSavingsTest.sql" />
-    <None Include="InsertTransactionsTest.sql" />
+    <None Include="InsertBudgetTest.sql">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="InsertItemTest.sql">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="InsertSavingsTest.sql">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
+    <None Include="InsertTransactionsTest.sql">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -49,6 +49,12 @@
     <ClCompile Include="BudgetClass.h">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\BudgetClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SavingsClass.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="headers\BudgetManagementSystem.h">
